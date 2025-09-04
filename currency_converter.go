@@ -8,19 +8,9 @@ import (
 	"os"
 	"strconv"
 	"strings"
-
-	"github.com/joho/godotenv"
 )
 
 func main() {
-	// Load .env file
-	_ = godotenv.Load()
-	apiKey := os.Getenv("EXCHANGE_API_KEY")
-	if apiKey == "" {
-		fmt.Println("API key not found. Please set EXCHANGE_API_KEY in your .env file.")
-		return
-	}
-
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter amount: ")
@@ -40,6 +30,8 @@ func main() {
 	to, _ := reader.ReadString('\n')
 	to = strings.ToUpper(strings.TrimSpace(to))
 
+	
+	apiKey := "5d16c1eba19d00628414c06f"
 	apiURL := fmt.Sprintf("https://v6.exchangerate-api.com/v6/%s/latest/%s", apiKey, from)
 	resp, err := http.Get(apiURL)
 	if err != nil {

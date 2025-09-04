@@ -1,13 +1,13 @@
-# Prompt-Powered Kickstart: Building a Beginner’s Toolkit for Go
+# Prompt-Powered Kickstart: Go Currency Converter CLI Toolkit
 
 ## 1. Title & Objective
-**Getting Started with Go – A Beginner’s Guide**
+**Getting Started with Go – Currency Converter CLI**
 
 - **Chosen Technology:** Go (Golang)
 - **Why Go?** Go is a statically typed, compiled language designed for simplicity and efficiency. It’s widely used for backend services, cloud infrastructure, and command-line tools.
-- **End Goal:** Run a minimal "Hello World" Go program.
+- **End Goal:** Build and run a CLI tool that converts currencies using real-time exchange rates from exchangerate-api.com.
 
-## 2. Quick Summary of Go
+## 2. Quick Summary of the Technology
 Go is an open-source programming language developed by Google. It is known for its simplicity, concurrency support, and fast compilation. Go is used in cloud services (e.g., Docker, Kubernetes), web servers, and CLI tools.
 
 - **What is it?** A compiled, statically typed language for building scalable software.
@@ -27,60 +27,58 @@ sudo apt update
 sudo apt install golang-go
 ```
 #### Verify Installation
-```bash
+
 go version
-```
+
 Expected output: `go version go1.x.x ...`
 
-### Step 2: Clone or Create Project Directory
-```bash
-mkdir go-beginner-toolkit
-cd go-beginner-toolkit
-```
+### Step 2: Clone Project Directory
 
-### Step 3: Create Hello World File
-Create a file named `main.go` with the following content:
-```go
-package main
+git clone <your-repo-url>
+cd capstone
 
-import "fmt"
+### Step 3: Install Dependencies
 
-func main() {
-    fmt.Println("Hello, World from Go!")
-}
-```
+go mod tidy
 
 ## 5. Minimal Working Example
-This program prints `Hello, World from Go!` to the terminal.
+This CLI program converts an amount from one currency to another using real-time exchange rates from exchangerate-api.com. The API key is hardcoded for demonstration purposes.
 
 ### Run the Program
-```bash
-go run main.go
-```
-Expected output:
-```
-Hello, World from Go!
-```
+
+go run currency_converter.go
+
+Follow the prompts:
+- Enter amount (e.g., 100)
+- Enter source currency (e.g., USD)
+- Enter target currency (e.g., KES)
+
+
 
 ## 6. AI Prompt Journal
-- **Prompt used:**
-  - "Give me a step-by-step guide to initialize a Go Hello World project on Linux."
+- **Prompts used:**
+  - "How do I make a CLI app in Go that fetches data from an API?"
+  - "How do I parse JSON in Go?"
+  - "How do I use an API key in Go?"
 - **AI’s response summary:**
-  - Provided installation steps, project scaffolding, and code example.
+  - Helped scaffold the CLI, handle errors, and securely use API keys.
 - **Evaluation:**
-  - Very helpful for quickly setting up Go and understanding the basics.
+  - Very helpful for quickly setting up Go, understanding HTTP requests, and error handling.
 
 ## 7. Common Issues & Fixes
-- **Issue:** `go: command not found`
-  - **Fix:** Ensure Go is installed and added to your PATH. Run `sudo apt install golang-go`.
-- **Issue:** Permission denied when installing Go
-  - **Fix:** Use `sudo` for installation commands.
-- **Issue:** Typo in code (e.g., missing quotes or parentheses)
-  - **Fix:** Double-check code syntax and rerun.
+- **Issue:** `Invalid currency code or API error.`
+  - **Fix:** Make sure you enter valid ISO currency codes (e.g., USD, KES, EUR).
+- **Issue:** `Target currency not found.`
+  - **Fix:** Check if the currency is supported by exchangerate-api.com.
+- **Issue:** `Invalid amount.`
+  - **Fix:** Enter a valid number when prompted.
+- **Issue:** Network errors
+  - **Fix:** Ensure you have an active internet connection.
 
 ## 8. References
 - [Official Go Documentation](https://golang.org/doc/)
 - [Go by Example](https://gobyexample.com/)
+- [Exchangerate API Docs](https://www.exchangerate-api.com/docs)
 - [Moringa School AI Curriculum](https://ai.moringaschool.com/)
 - [Stack Overflow Go Questions](https://stackoverflow.com/questions/tagged/go)
 
