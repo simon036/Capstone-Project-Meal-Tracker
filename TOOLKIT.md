@@ -1,11 +1,11 @@
-# Prompt-Powered Kickstart: Go Currency Converter CLI Toolkit
+# Prompt-Powered Kickstart: Go Meal Tracker CLI Toolkit
 
 ## 1. Title & Objective
-**Getting Started with Go – Currency Converter CLI**
+**Getting Started with Go – Meal Tracker CLI**
 
 - **Chosen Technology:** Go (Golang)
 - **Why Go?** Go is a statically typed, compiled language designed for simplicity and efficiency. It’s widely used for backend services, cloud infrastructure, and command-line tools.
-- **End Goal:** Build and run a CLI tool that converts currencies using real-time exchange rates from exchangerate-api.com.
+- **End Goal:** Build and run a CLI tool that helps users log meals, calories, and meal times, and view daily summaries.
 
 ## 2. Quick Summary of the Technology
 Go is an open-source programming language developed by Google. It is known for its simplicity, concurrency support, and fast compilation. Go is used in cloud services (e.g., Docker, Kubernetes), web servers, and CLI tools.
@@ -27,58 +27,68 @@ sudo apt update
 sudo apt install golang-go
 ```
 #### Verify Installation
-
+```bash
 go version
-
+```
 Expected output: `go version go1.x.x ...`
 
 ### Step 2: Clone Project Directory
-
+```bash
 git clone <your-repo-url>
 cd capstone
+```
 
 ### Step 3: Install Dependencies
-
+```bash
 go mod tidy
+```
 
 ## 5. Minimal Working Example
-This CLI program converts an amount from one currency to another using real-time exchange rates from exchangerate-api.com. The API key is hardcoded for demonstration purposes.
+This CLI program lets users add meals, list them, and see total calories for the day—all locally, no API key or internet required.
 
 ### Run the Program
-
-go run currency_converter.go
-
+```bash
+go run meal_tracker.go
+```
 Follow the prompts:
-- Enter amount (e.g., 100)
-- Enter source currency (e.g., USD)
-- Enter target currency (e.g., KES)
+- Add a meal (name, calories, time)
+- List all meals
+- Show total calories for the day
+- Exit
 
-
+**Sample Output:**
+```
+Meal Tracker CLI
+1. Add meal
+2. List meals
+3. Show total calories
+4. Exit
+Choose an option: 1
+Enter meal name: Banana
+Enter calories: 100
+Enter time (e.g., breakfast, lunch, dinner): breakfast
+Meal added!
+```
 
 ## 6. AI Prompt Journal
 - **Prompts used:**
-  - "How do I make a CLI app in Go that fetches data from an API?"
-  - "How do I parse JSON in Go?"
-  - "How do I use an API key in Go?"
+  - "How do I make a CLI app in Go that stores and lists data?"
+  - "How do I use structs and slices in Go?"
+  - "How do I handle user input in Go?"
 - **AI’s response summary:**
-  - Helped scaffold the CLI, handle errors, and securely use API keys.
+  - Helped scaffold the CLI, handle errors, and use Go data structures.
 - **Evaluation:**
-  - Very helpful for quickly setting up Go, understanding HTTP requests, and error handling.
+  - Very helpful for quickly setting up Go, understanding CLI input, and error handling.
 
 ## 7. Common Issues & Fixes
-- **Issue:** `Invalid currency code or API error.`
-  - **Fix:** Make sure you enter valid ISO currency codes (e.g., USD, KES, EUR).
-- **Issue:** `Target currency not found.`
-  - **Fix:** Check if the currency is supported by exchangerate-api.com.
-- **Issue:** `Invalid amount.`
+- **Issue:** `Invalid calories.`
   - **Fix:** Enter a valid number when prompted.
-- **Issue:** Network errors
-  - **Fix:** Ensure you have an active internet connection.
+- **Issue:** Go not installed
+  - **Fix:** Download and install Go from the official site.
 
 ## 8. References
 - [Official Go Documentation](https://golang.org/doc/)
 - [Go by Example](https://gobyexample.com/)
-- [Exchangerate API Docs](https://www.exchangerate-api.com/docs)
 - [Moringa School AI Curriculum](https://ai.moringaschool.com/)
 - [Stack Overflow Go Questions](https://stackoverflow.com/questions/tagged/go)
 
